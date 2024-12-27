@@ -1,7 +1,9 @@
 import { Entypo, Feather } from '@expo/vector-icons';
-import { Redirect, Tabs } from 'expo-router';
+import { Link, Redirect, Tabs } from 'expo-router';
 import { theme } from '@/theme';
 import { useUserStore } from '@/store/userStore';
+import AntDesign from '@expo/vector-icons/AntDesign';
+import { Pressable } from 'react-native';
 
 export default function Layout() {
   const hasFinishedOnboarding = useUserStore(
@@ -17,6 +19,19 @@ export default function Layout() {
         options={{
           title: 'Home',
           tabBarShowLabel: false,
+          headerRight: () => {
+            return (
+              <Link href="/new" asChild>
+                <Pressable hitSlop={20} style={{ marginRight: 16 }}>
+                  <AntDesign
+                    name="pluscircleo"
+                    size={24}
+                    color={theme.colorGreen}
+                  />
+                </Pressable>
+              </Link>
+            );
+          },
           tabBarIcon: () => <Entypo name="leaf" size={24} color={'black'} />,
         }}
       />
