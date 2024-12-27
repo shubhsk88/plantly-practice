@@ -9,6 +9,7 @@ export default function App() {
   const plants = usePlantStore((store) => store.plants);
   const router = useRouter();
 
+  console.log(plants, 'opkas');
   console.log(plants);
   return (
     <FlatList

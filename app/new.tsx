@@ -42,7 +42,7 @@ export default function NewScreen() {
         'Watering frequency must be a be a number',
       );
     }
-    addPlants(name, +days);
+    addPlants(name, +days, imageUri);
     router.navigate('/');
   };
   const handleChooseImage = async () => {
