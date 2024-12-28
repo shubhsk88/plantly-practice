@@ -2,15 +2,13 @@ import { PlantCard } from '@/components/PlantCard';
 import { PlantlyButton } from '@/components/PlantlyButton';
 import { usePlantStore } from '@/store/plantStore';
 import { useRouter } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import { FlatList, StyleSheet, Text, View } from 'react-native';
+
+import { FlatList, StyleSheet } from 'react-native';
 
 export default function App() {
   const plants = usePlantStore((store) => store.plants);
   const router = useRouter();
 
-  console.log(plants, 'opkas');
-  console.log(plants);
   return (
     <FlatList
       data={plants}
